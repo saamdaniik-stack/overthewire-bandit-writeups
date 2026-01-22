@@ -367,7 +367,10 @@ Another TERMINAL
 ### Level Goal
 A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
 
-### Solution
+### Solution:
+ Here there is a cron job running. Cron jobs are scheduled tasks that run automatically in the background of the operating system and are stored in the /etc/cron.d directory. By checking this directory, we can see the cronjob_bandit22 file, which executes a bash script. Reading that script shows that it copies the bandit22 password from the protected directory into a temporary file. Since the temporary file is readable, accessing it directly reveals the flag.
+
+ #### Flag: `tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q`
 
 <img width="855" height="334" alt="image" src="https://github.com/user-attachments/assets/fb65ead8-c755-43d3-ac1e-d1634a32543d" />
 
@@ -379,6 +382,45 @@ A program is running automatically at regular intervals from cron, the time-base
 NOTE: Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. If you are having problems understanding what it does, try executing it to see the debug information it prints.
 
 ### Solution:
+Here there is a cron job running for bandit23. Cron jobs are scheduled tasks that run automatically in the background and are stored in the /etc/cron.d directory. By checking the cronjob_bandit23 file, we can see that it runs a script which creates a filename using the MD5 hash of the string I am user bandit23 and stores the password in the /tmp directory using that hash as the filename. By manually generating the MD5 hash with the given command and then reading the corresponding file from /.
+
+#### flag: `0Zf11ioIjMVN551jX3CmStKLYqjk54Ga`
+
+<img width="686" height="186" alt="image" src="https://github.com/user-attachments/assets/e5e082e6-1c5e-4c71-9faa-4c05ee79478d" />
+
+## Bandit Level 23 → Level 24
+### Level Goal
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+NOTE: This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!
+
+NOTE 2: Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…
+
+### Solution:
+From this level, we understand that any file placed inside the bandit24 directory is automatically executed by a cron job. If the file is created by bandit23, it gets executed once and then deleted after about 60 seconds. To get the password for bandit24, we need to create a simple bash script that reads the password file and saves it in a location we can access, such as the /tmp directory. Once the script is copied into the bandit24 folder with proper permissions, the cron job executes it and stores the password for us before deleting the script.
+
+#### Commands:
+
+`mkdir /tmp/dani`
+
+`cd /tmp/dani`
+
+Custom bash file for saving a copy before it gets deleted
+
+`script.sh`
+
+`#!/bin/bash`
+`cat /etc/bandit_pass/bandit24 > /tmp/dani/password`
+Then create a file named touch password in the /tmp/shaz/ directory
+
+Also give the permission for our script using
+
+`chmod 777 -R /tmp/shaz`
+
+`cp script.sh /var/spool/bandit24`
+
+#### Flag: `gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8`
+
 
 
 
