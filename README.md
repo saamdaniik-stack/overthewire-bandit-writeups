@@ -156,7 +156,31 @@ A file containing multiple strings was provided, where most entries were repeate
 ### Level Goal
 The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
 
-### Solution
+### Solution:
+Here we are given data.txt file, if we cat the file which returns garbage, So lets use `strings` command here
+
+#### Command: strings data.txt
+
+#### Flag: `FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey`
+
+<img width="404" height="138" alt="image" src="https://github.com/user-attachments/assets/055706f2-83da-4272-917f-0aacede6d0d0" />
+
+<img width="481" height="155" alt="image" src="https://github.com/user-attachments/assets/12423f4d-6425-4bf7-a0a5-48708fa919e4" />
+
+## Level 10 → Level 11
+### Level Goal
+The password for the next level is stored in the file data.txt, which contains base64 encoded data.
+
+### Solution: 
+The given string was Base64-encoded. To retrieve the original password, the encoded string was decoded using the `base64` command with the decode option.
+
+echo 'VGhlIHBhc3N3b3JkIGlzIGR0UjE3M2ZaS2IwUlJzREZTR3NnMlJXbnBOVmozcVJyCg==' | base64 -d
+
+#### Flag: `dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr`
+
+<img width="963" height="143" alt="image" src="https://github.com/user-attachments/assets/0004ff37-58ff-4d65-bc6b-b8432693fab3" />
+
+
 
 
 
