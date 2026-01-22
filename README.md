@@ -62,11 +62,49 @@ The contents of the hidden file were then displayed using the `cat` command to o
 
 <img width="624" height="298" alt="image" src="https://github.com/user-attachments/assets/8bc80d54-8a8a-4216-a8bd-94f334981ae2" />
 
-##Level 4 → Level 5
-###Level Goal
+## Level 4 → Level 5
+### Level Goal
 The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
 
 Commands you may need to solve this level ls , cd , cat , file , du , find
+
+### Solution:
+Here also, there is a directory named `inhere`.
+
+Inside this directory, we can see many files containing garbage data. To filter and identify the correct file, we use the following command:
+`file ./*`
+
+Here, `*` matches all the files in the directory, and the `file` command returns the type of each file.
+
+From the output, `-file07` is identified as ASCII text, while the remaining files contain binary or irrelevant data. Since the flag is stored in a readable text file, we use the `cat` command to display its contents.
+#### Flag: `4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw`
+
+<img width="852" height="373" alt="image" src="https://github.com/user-attachments/assets/ce05c9d2-2510-48be-afef-8be224272efa" />
+
+## Level 5 → Level 6
+### Level Goal
+The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
+
+human-readable 1033 bytes in size not executable
+
+### Solution:
+Logged in to the server using the SSH credentials for level 5.
+
+After listing the files using the ls command, a directory named inhere was found and accessed using the cd command. Inside the directory, multiple subdirectories named maybehereXX were present.
+
+Since the level specifies that the flag file is readable, exactly `1033` bytes in size, and not executable, the find command was used to filter files based on these properties.
+`find . -readable -size 1033c -not -executable`
+This command searched the current directory and all subdirectories, returning the file `./maybehere07/.file2` as the only match.
+
+The contents of the identified file were then displayed using the cat command to obtain the flag.
+
+`cat ./maybehere07/.file2`
+
+#### Flag: `HWasnPhtq9AVKe0dmk45nxy20cvUa6EG`
+
+<img width="1183" height="192" alt="image" src="https://github.com/user-attachments/assets/b3c2fdb1-0add-4f48-bf7a-8772c3692059" />
+
+
 
 
 
