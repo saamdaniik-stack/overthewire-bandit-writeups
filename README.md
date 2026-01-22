@@ -203,6 +203,70 @@ using `CyberChef`
 The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)
 
 ### Solution:
+Here we can see a Hexdump stored in a text file:
+
+<img width="634" height="296" alt="image" src="https://github.com/user-attachments/assets/7a1e77d5-d998-4627-b41e-934d78433019" />
+
+By using this command we can reverse the hexdump to executable file
+
+`cat data.txt | xxd -r > hexdump`
+
+Before doing this make sure to copy the file .txt file to the /tmp/
+
+After that using file command for finding the file of the reversed hexdump we can see that its a gzip file
+
+The file is looped with gzip and bz2 zippers use this command multiple times and we should get a tar file. Here are the commands to do so
+
+`mv hexdump hexdump.gz`
+
+`gzip -d hexdump.gz`
+
+`bzip2 -d hexdump`
+
+`tar -xvf hexdump`
+
+#### Flag: `FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn`
+
+<img width="510" height="110" alt="image" src="https://github.com/user-attachments/assets/2e8c5f22-fc7d-4a15-970e-b99fc527e130" />
+
+## Level 13 → Level 14
+### Level Goal
+The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Look at the commands that logged you into previous bandit levels, and find out how to use the key for this level.
+
+### Solution:
+
+Here we can see a SSH key, to solve this lvl we need to simply connect to the localhost of the ssh server
+
+#### Command: `ssh -i sshkey.private -p 2220 bandit14@localhost`
+#### Flag: `MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS`
+
+<img width="939" height="524" alt="image" src="https://github.com/user-attachments/assets/3610c706-80ff-4b0a-9568-8bcf98f98724" />
+
+## Bandit Level 14 → Level 15
+### Level Goal
+The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+
+Solution:
+In this challenge, we connect to port 30000 using netcat
+
+#### Command: `nc localhost 30000`
+
+After entering the current Level 14 password, the server responds by displaying the Level 15 flag on the terminal.
+
+#### Flag: `MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS`
+
+<img width="418" height="119" alt="image" src="https://github.com/user-attachments/assets/ee47bc95-a760-48e0-88d6-75777fde973d" />
+
+## Bandit Level 15 → Level 16
+### Level Goal
+The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL/TLS encryption.
+
+Helpful note: Getting “DONE”, “RENEGOTIATING” or “KEYUPDATE”? Read the “CONNECTED COMMANDS” section in the manpage.
+
+### Solution:
+
+
+
 
 
 
