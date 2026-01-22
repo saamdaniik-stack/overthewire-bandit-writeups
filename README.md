@@ -94,6 +94,7 @@ After listing the files using the ls command, a directory named inhere was found
 
 Since the level specifies that the flag file is readable, exactly `1033` bytes in size, and not executable, the find command was used to filter files based on these properties.
 `find . -readable -size 1033c -not -executable`
+
 This command searched the current directory and all subdirectories, returning the file `./maybehere07/.file2` as the only match.
 
 The contents of the identified file were then displayed using the cat command to obtain the flag.
@@ -103,6 +104,36 @@ The contents of the identified file were then displayed using the cat command to
 #### Flag: `HWasnPhtq9AVKe0dmk45nxy20cvUa6EG`
 
 <img width="1183" height="192" alt="image" src="https://github.com/user-attachments/assets/b3c2fdb1-0add-4f48-bf7a-8772c3692059" />
+
+##Level 6 → Level 7
+###Level Goal
+The password for the next level is stored somewhere on the server and has all of the following properties:
+
+owned by user bandit7 owned by group bandit6 33 bytes in size
+
+### Solution:
+Here also they have given the properties to find the flag file.
+
+Using find command with the specific filters, we can find a file with no permission denied.
+
+`find / -user bandit7 -group bandit6 -size 33c`
+
+#### Flag: `morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj`
+
+<img width="676" height="239" alt="image" src="https://github.com/user-attachments/assets/74b8c89f-559e-4eae-8a8e-ec822f5bd477" />
+
+<img width="832" height="152" alt="image" src="https://github.com/user-attachments/assets/e9506561-bfe9-4cab-b72b-c0175e279e88" />
+
+<img width="545" height="137" alt="image" src="https://github.com/user-attachments/assets/e75ed117-02fa-44f9-9325-0c481763fa01" />
+
+##Level 7 → Level 8
+###Level Goal
+The password for the next level is stored in the file data.txt next to the word millionth
+
+###Solution
+
+
+
 
 
 
