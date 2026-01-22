@@ -174,11 +174,38 @@ The password for the next level is stored in the file data.txt, which contains b
 ### Solution: 
 The given string was Base64-encoded. To retrieve the original password, the encoded string was decoded using the `base64` command with the decode option.
 
-echo 'VGhlIHBhc3N3b3JkIGlzIGR0UjE3M2ZaS2IwUlJzREZTR3NnMlJXbnBOVmozcVJyCg==' | base64 -d
+#### command: 'echo 'VGhlIHBhc3N3b3JkIGlzIGR0UjE3M2ZaS2IwUlJzREZTR3NnMlJXbnBOVmozcVJyCg==' | base64 -d'
 
 #### Flag: `dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr`
 
 <img width="963" height="143" alt="image" src="https://github.com/user-attachments/assets/0004ff37-58ff-4d65-bc6b-b8432693fab3" />
+
+## Level 11 → Level 12
+### Level Goal
+The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+
+### Solution: 
+Simple rot13 has been done so rot13 returns the flag
+
+#### Command: `echo 'Gur cnffjbeq vf 7k16JArUVv5LxVuJfsSVdbbtaHGlw9D4' | tr 'A-Za-z' 'N-ZA-Mn-za-m'`
+
+#### Flag: `7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4`
+
+
+<img width="957" height="147" alt="image" src="https://github.com/user-attachments/assets/03d75a73-1946-4625-817c-1b972cc0afc8" />
+
+using `CyberChef`
+
+<img width="1365" height="604" alt="image" src="https://github.com/user-attachments/assets/f1e0a8c7-7d17-4336-adcb-dea32241a2fb" />
+
+## Level 12 → Level 13
+### Level Goal
+The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+
+### Solution:
+
+
+
 
 
 
