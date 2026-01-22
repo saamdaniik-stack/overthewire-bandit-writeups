@@ -271,6 +271,8 @@ Here we need to connect to the port 30001 with openssl
 And enter your LEVEL 15 password the new password will be printed
 `8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo`
 
+#### Flag: `kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx`
+
 <img width="995" height="676" alt="image" src="https://github.com/user-attachments/assets/b6415049-b89a-403b-a558-e7a16f2f4547" />
 
 
