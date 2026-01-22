@@ -1,7 +1,7 @@
 # OverTheWire Bandit – Writeups
 ## Level 0 and Level 0 → Level 1
 ### Level Goal
-The goal of this level is for you to log into the game using SSH. The host to which you need to connect is bandit.labs.overthewire.org, on port 2220. The username is bandit0 and the password is bandit0. Once logged in, go to the Level 1 page to find out how to beat Level 1.
+The objective of this level is to access the NATAS game through a web browser and locate the password for the next level. The login credentials for this level are provided, and the password for natas1 is hidden within the webpage itself.
 
 #### Solution:
 First, open the following URL in a web browser:
@@ -10,7 +10,6 @@ First, open the following URL in a web browser:
 Log in using the given credentials:
 
 Username: natas0
-
 Password: natas0
 
 After successfully logging in, view the page source of the website. Upon inspecting the HTML code, a comment is found that contains the password for the next level.
