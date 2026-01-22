@@ -275,6 +275,117 @@ And enter your LEVEL 15 password the new password will be printed
 
 <img width="995" height="676" alt="image" src="https://github.com/user-attachments/assets/b6415049-b89a-403b-a558-e7a16f2f4547" />
 
+## Bandit Level 16 → Level 17
+### Level Goal
+The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then find out which of those speak SSL/TLS and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.
+
+Helpful note: Getting “DONE”, “RENEGOTIATING” or “KEYUPDATE”? Read the “CONNECTED COMMANDS” section in the manpage.
+
+### Solution:
+
+In this challenge we can see that there is port range from 31000 to 32000 in which we need to find the one which uses ssl and nc into it.
+
+For that we can use the nmap tool.
+
+### Command: `nmap localhost -p 31000-32000`
+
+Which is used for finding open ports and we got 6 open ports, so lets find the service running on the open ports using this command
+
+#### Command: `nmap localhost -p 31046,31518,31691,31790,31960 -sV -T4`
+Then simply connect with openssl
+
+And a RSA key will show up
+#### Command: `openssl s_client -connect localhost:31790 -ign_eof`
+
+
+<img width="662" height="601" alt="image" src="https://github.com/user-attachments/assets/7117e90c-50f7-40b4-a868-1a35d5dbfe9e" />
+Save that ssh key in a file like ssh_key.pem
+
+## Bandit Level 17 → Level 18
+### Level Goal
+There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new
+
+NOTE: if you have solved this level and see ‘Byebye!’ when trying to log into bandit18, this is related to the next level, bandit19
+
+### Solution:
+ In this level, two files are provided: passwords.old and passwords.new.
+Both files are almost identical, except for one single line that was modified.
+That changed line in passwords.new contains the password for the next level.
+
+To identify the difference between the two files, we use the diff command, which compares files line by line and highlights the changes.
+
+#### Command: `diff passwords.old passwords.new`
+
+#### Flag: `x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO`
+
+## Bandit Level 18 → Level 19
+### Level Goal
+The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
+
+### Solution:
+In this level, logging in normally via SSH is not possible because .bashrc forces an immediate logout. To work around this, we execute a command directly during the SSH connection. By running cat readme as part of the SSH command, the contents of the file are printed before the session is closed. The output reveals the password for the next level.
+
+#### Command: `ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme`
+#### Flag: `cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8`
+
+<img width="692" height="325" alt="image" src="https://github.com/user-attachments/assets/2042be3d-2c5a-44f5-a56c-cb7e045bdaa6" />
+
+## Bandit Level 19 → Level 20
+### Level Goal
+To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
+
+### Solution:
+Here we can see a elf file from which we can command execution and we can see that in the permission only the ELF file have access to the bandit20 host
+
+#### Command: `./bandit20-do cat /etc/bandit_pass/bandit20`
+
+#### Flag:`0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO`
+
+<img width="587" height="48" alt="image" src="https://github.com/user-attachments/assets/aff78934-98ad-48de-a684-db69932a709a" />
+
+## Bandit Level 20 → Level 21
+### Level Goal
+There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
+
+NOTE: Try connecting to your own network daemon to see if it works as you think
+
+### Solution:
+In this challenge we need to use a ncat session for that we can simply use this command
+
+`nc -lvp 2222`
+
+And connect with `./suconnect` in another terminal and the given port number which is 2222 and giving the current flag unlocks the new flag!
+#### Flag: `EeoULMCra2q0dSkYj561DX7s1CpBuOBt`
+
+<img width="365" height="120" alt="image" src="https://github.com/user-attachments/assets/17560639-c432-41a2-92c9-b9749f042828" />
+
+Another TERMINAL 
+
+<img width="389" height="135" alt="image" src="https://github.com/user-attachments/assets/ab0e7d6a-3519-4b71-baa3-a4ad0156fa0d" />
+
+## Bandit Level 21 → Level 22
+### Level Goal
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+### Solution
+
+<img width="855" height="334" alt="image" src="https://github.com/user-attachments/assets/fb65ead8-c755-43d3-ac1e-d1634a32543d" />
+
+## Bandit Level 22 → Level 23
+
+### Level Goal
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+NOTE: Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. If you are having problems understanding what it does, try executing it to see the debug information it prints.
+
+### Solution:
+
+
+
+
+
+
+
 
 
 
