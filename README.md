@@ -401,25 +401,31 @@ From this level, we understand that any file placed inside the bandit24 director
 
 #### Commands:
 
-`mkdir /tmp/dani`
-
-`cd /tmp/dani`
-
-Custom bash file for saving a copy before it gets deleted
-
-`script.sh`
-
-`#!/bin/bash`
-`cat /etc/bandit_pass/bandit24 > /tmp/dani/password`
-Then create a file named touch password in the /tmp/shaz/ directory
-
-Also give the permission for our script using
-
-`chmod 777 -R /tmp/shaz`
-
-`cp script.sh /var/spool/bandit24`
+`ls /etc/cron.d/,cat /etc/cron.d/cronjob_bandit24,cat /usr/bin/cronjob_bandit24.sh,nano pass.sh,chmod +x pass.sh,cp pass.sh /var/spool/bandit24/foo/pass.sh,cat /tmp/bandit24_pass`
 
 #### Flag: `gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8`
+
+## Bandit Level 24 → Level 25
+### Level Goal
+A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing. You do not need to create new connections each time
+
+### Solution:
+First we need to enter into the tmp directory and then we need to run this command for i in {0000..9999}; do printf "%s %04d\n" "$(cat /etc/bandit_pass/bandit24)" "$i" done | nc localhost 30002 where , we generate the four digit pin by for loop and using printf as it asked we need to print the password of bandit 24 and the four digit pin note: dont forget add the zero padding and pipe the input to the daemon listening port 30002 with the help of netcat
+
+#### Command `for i in {0000..9999}; do printf "%s %04d\n" "$(cat /etc/bandit_pass/bandit24)" "$i"; done | nc localhost 30002`
+#### Flag: `iCi86ttT4KSNe1armKiwbQNmB3YJP3q4`
+
+<img width="714" height="252" alt="image" src="https://github.com/user-attachments/assets/103c2d04-1c9e-454c-9f45-dd253a7b1743" />
+
+## Bandit Level 25 → Level 26
+
+###Level Goal
+Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.
+
+NOTE: if you’re a Windows user and typically use Powershell to ssh into bandit: Powershell is known to cause issues with the intended solution to this level. You should use command prompt instead.
+
+###Solution:
+
 
 
 
