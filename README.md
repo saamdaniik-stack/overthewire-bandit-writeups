@@ -246,14 +246,14 @@ Here we can see a SSH key, to solve this lvl we need to simply connect to the lo
 ### Level Goal
 The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
 
-Solution:
+### Solution:
 In this challenge, we connect to port 30000 using netcat
 
 #### Command: `nc localhost 30000`
 
 After entering the current Level 14 password, the server responds by displaying the Level 15 flag on the terminal.
 
-#### Flag: `MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS`
+#### Flag: `8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo`
 
 <img width="418" height="119" alt="image" src="https://github.com/user-attachments/assets/ee47bc95-a760-48e0-88d6-75777fde973d" />
 
@@ -264,6 +264,15 @@ The password for the next level can be retrieved by submitting the password of t
 Helpful note: Getting “DONE”, “RENEGOTIATING” or “KEYUPDATE”? Read the “CONNECTED COMMANDS” section in the manpage.
 
 ### Solution:
+
+Here we need to connect to the port 30001 with openssl
+`openssl s_client -connect localhost:30001`
+
+And enter your LEVEL 15 password the new password will be printed
+`8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo`
+
+<img width="995" height="676" alt="image" src="https://github.com/user-attachments/assets/b6415049-b89a-403b-a558-e7a16f2f4547" />
+
 
 
 
