@@ -126,11 +126,39 @@ Using find command with the specific filters, we can find a file with no permiss
 
 <img width="545" height="137" alt="image" src="https://github.com/user-attachments/assets/e75ed117-02fa-44f9-9325-0c481763fa01" />
 
-##Level 7 → Level 8
-###Level Goal
+## Level 7 → Level 8
+### Level Goal
 The password for the next level is stored in the file data.txt next to the word millionth
 
-###Solution
+### Solution:
+Here, a wordlist containing usernames and passwords is provided. It is mentioned that the username millionth contains the flag. To extract the required entry, we use a simple grep command to filter the exact line.
+
+#### Command: `cat data.txt | grep 'millionth'`
+
+#### Flag: `dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc`
+
+<img width="455" height="233" alt="image" src="https://github.com/user-attachments/assets/81579a85-224e-464e-a2c8-bf189c146675" />
+
+## Level 8 → Level 9
+### Level Goal
+The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
+
+### Solution:
+A file containing multiple strings was provided, where most entries were repeated and only one entry appeared once. To identify the unique string, the file contents were sorted so that identical lines were grouped together. The `uniq -u` command was then used to filter and display only the line that occurs once.
+
+#### Command: `cat data.txt | sort | uniq -u`
+
+#### Flag: `4CKMh1JI91bUIZZPXDqGanal4xvAg0JM`
+
+<img width="450" height="74" alt="image" src="https://github.com/user-attachments/assets/bacffe28-23dd-4162-8115-bf4a686cfb2e" />
+
+## Level 9 → Level 10
+### Level Goal
+The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
+
+### Solution
+
+
 
 
 
