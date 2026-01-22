@@ -8,10 +8,10 @@ Connecting to the provided SSH server using the following command:
 ssh bandit0@bandit.labs.overthewire.org -p 2220
 
 When prompted, enter the password:
-'bandit0'
+`bandit0`
 
 After logging in, shell access is obtained. Now read the readme file to get the flag for this level.
-##### Flag 'ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If'
+##### Flag `ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If`
 
 <img width="779" height="210" alt="image" src="https://github.com/user-attachments/assets/aeb28ced-3cbb-432a-b674-12dd35991425" />
 
