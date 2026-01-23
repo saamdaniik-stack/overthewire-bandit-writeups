@@ -555,7 +555,8 @@ After all this git stuff, it’s time for another escape. Good luck!
 
 #### Command: `cat /etc/bandit_pass/bandit33`
 
-![1769141452658254268625283009893](https://github.com/user-attachments/assets/fcf2b402-72b6-47ab-b5cb-6ac5fbef83ac)
+![Uploading 1769141452658254268625283009893.jpg…]()
+
 
 
 #### Flag: `tQdtbs5D5i2vJwkO8mEyYeYL8izoeJ0`
