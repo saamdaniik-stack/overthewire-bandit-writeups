@@ -425,6 +425,33 @@ Logging in to bandit26 from bandit25 should be fairly easy… The shell for user
 NOTE: if you’re a Windows user and typically use Powershell to ssh into bandit: Powershell is known to cause issues with the intended solution to this level. You should use command prompt instead.
 
 ### Solution:
+#### commands:
+
+`ssh -i bandit26.sshkey bandit26@localhost -p 2220`
+
+Resize the window size of the terminal and
+
+`use :r /etc/bandit_pass/bandit26`
+
+Flag: `s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ`
+
+## Bandit Level 26 → Level 27
+### Level Goal
+Good job getting a shell! Now hurry and grab the password for bandit27!
+### Solution
+After logging in as bandit26, the session opens directly in vim instead of a normal shell.
+By using a vim escape, we can spawn a shell from within the editor.
+
+Inside vim, the command :shell is used to obtain a shell prompt.
+In this shell, there is a file named bandit27-do, which is a setuid binary that allows executing commands as user bandit27.
+
+By executing this binary with the cat command, we can read the password file of bandit27.
+
+#### Commands:
+`:shell`
+`./bandit27-do cat /etc/bandit_pass/bandit27`
+
+
 
 
 
