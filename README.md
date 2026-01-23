@@ -552,9 +552,10 @@ Finally, the commit was pushed to the remote repository:
 After all this git stuff, it’s time for another escape. Good luck!
 
 ### SolutIon:
-SolutIon:
-####Command: `cat /etc/bandit_pass/bandit33`
-####Flag: `tQdtbs5D5i2vJwkO8mEyYeYL8izoeJ0`
+
+#### Command: `cat /etc/bandit_pass/bandit33`
+
+#### Flag: `tQdtbs5D5i2vJwkO8mEyYeYL8izoeJ0`
 
 
 
