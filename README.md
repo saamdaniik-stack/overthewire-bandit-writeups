@@ -486,8 +486,10 @@ Next, the dev branch was checked out:
 After switching branches, the README file was viewed.
 The flag was found inside the README file.
 
-Flag:
+#### Flag:
 `qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL`
+
+<img width="655" height="408" alt="image" src="https://github.com/user-attachments/assets/85767dd0-8d0e-425c-88d2-0eb6186bdb5b" />
 
 
 ## Bandit Level 30 → Level 31
@@ -513,6 +515,9 @@ This revealed the password for the next level.
 
 Flag:
 `OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt`
+
+<img width="722" height="244" alt="image" src="https://github.com/user-attachments/assets/ce7040c8-cf77-445e-9ff7-5b739badb5e0" />
+
 
 
 ## Bandit Level 31 → Level 32
@@ -555,9 +560,7 @@ After all this git stuff, it’s time for another escape. Good luck!
 
 #### Command: `cat /etc/bandit_pass/bandit33`
 
-![Uploading 1769141452658254268625283009893.jpg…]()
-
-
+<img width="854" height="306" alt="image" src="https://github.com/user-attachments/assets/4876fb69-36d4-4979-a915-13dc28a73168" />
 
 #### Flag: `tQdtbs5D5i2vJwkO8mEyYeYL8izoeJ0`
 
