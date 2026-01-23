@@ -450,7 +450,111 @@ By executing this binary with the cat command, we can read the password file of 
 #### Commands:
 `:shell`
 `./bandit27-do cat /etc/bandit_pass/bandit27`
+Flag: `upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB`
 
+## Bandit Level 27 → Level 28
+### Level Goal
+There is a git repository at ssh://bandit27-git@bandit.labs.overthewire.org/home/bandit27-git/repo via the port 2220. The password for the user bandit27-git is the same as for the user bandit27.
+
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
+
+### Solution:
+
+Go to the tmp directory and create a directory and clone the git with given port number 2220 and cat readme to get the flag
+
+git clone `ssh://bandit27-git@localhost:2220/home/bandit27-git/repo`
+
+Flag: `Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN`
+
+## Bandit Level 29 → Level 30
+### Level Goal
+There is a git repository at ssh://bandit29-git@bandit.labs.overthewire.org/home/bandit29-git/repo via the port 2220. The password for the user bandit29-git is the same as for the user bandit29.
+
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
+
+### Solution:
+
+A temporary directory was created at /tmp/dani, and the repository was cloned into it.
+(The password provided in the challenge is redacted.)
+
+First, all remote branches were listed using:
+`git branch -r`
+
+Next, the dev branch was checked out:
+`git checkout dev`
+
+After switching branches, the README file was viewed.
+The flag was found inside the README file.
+
+Flag:
+`qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL`
+
+
+## Bandit Level 30 → Level 31
+### Level Goal
+There is a git repository at ssh://bandit30-git@bandit.labs.overthewire.org/home/bandit30-git/repo via the port 2220. The password for the user bandit30-git is the same as for the user bandit30.
+
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
+
+### Solution:
+A Git repository is hosted remotely and is accessible over SSH on port 2220.
+The credentials for bandit30-git are the same as the password obtained in the previous level (bandit30).
+
+From the local machine, the repository was cloned using Git:
+`git clone ssh://bandit30-git@bandit.labs.overthewire.org:2220/home/bandit30-git/repo`
+
+After cloning, the repository directory was entered.
+On inspecting the repository, a Git object named secret was found.
+
+The contents of this object were displayed using the following command:
+`git show secret`
+
+This revealed the password for the next level.
+
+Flag:
+`OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt`
+
+
+## Bandit Level 31 → Level 32
+### Level Goal
+There is a git repository at ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo via the port 2220. The password for the user bandit31-git is the same as for the user bandit31.
+
+From your local machine (not the OverTheWire machine!), clone the repository and find the password for the next level. This needs git installed locally on your machine.
+
+### Solution:
+A Git repository is hosted at
+`ssh://bandit31-git@bandit.labs.overthewire.org:2220/home/bandit31-git/repo`
+
+The password for the user bandit31-git is the same as the password obtained in Bandit Level 31.
+The task must be performed from the local machine, with Git installed.
+Steps
+
+First, the repository was cloned from the remote server:
+`git clone ssh://bandit31-git@bandit.labs.overthewire.org:2220/home/bandit31-git/repo`
+
+After entering the repository directory, it was observed that the challenge requires submitting a specific key file.
+
+A file named key.txt was created with the required content:
+`echo "May I come in?" > key.txt`
+
+The file was then added to the Git staging area:
+`git add key.txt`
+
+Next, the changes were committed:
+`git commit -m "add key.txt"`
+
+Finally, the commit was pushed to the remote repository:
+`git push`
+
+
+## Bandit Level 32 → Level 33
+### Level Goal
+After all this git stuff, it’s time for another escape. Good luck!
+
+### SolutIon:
+SolutIon:
+####Command: `cat /etc/bandit_pass/bandit33`
+####Flag: `tQdtbs5D5i2vJwkO8mEyYeYL8izoeJ0`
 
 
 
